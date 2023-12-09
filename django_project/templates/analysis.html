@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Price Distribution</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<h1 class="text-center">Property Price Distribution</h1>
+<hr>
+
+<div class="container">
+    <canvas id="priceDistributionChart" width="400" height="200"></canvas>
+</div>
+
+
+<script>
+    var ctx = document.getElementById('priceDistributionChart').getContext('2d');
+    var property_prices = {{ property_prices|safe }};
+
+    var chart = new Chart(ctx, {
+        type: 'bar',  // Use 'bar' instead of 'histogram'
+        data: {
+            labels: property_prices,
+            datasets: [{
+                label: 'Property Price Distribution',
+                data: property_prices,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                x: {
+                    type: 'linear',
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+
+    $(document).ready(function() {
+        $('#dataTable').DataTable();
+    });
+</script>
+</body>
+</html>
+
