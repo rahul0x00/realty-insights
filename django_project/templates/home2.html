@@ -103,11 +103,11 @@
           var doughnutChart = new Chart(doughnutCtx, {
             type: 'doughnut',
             data: {
-              labels: ['Red', 'Blue'],
+              labels: ["Apartment", "House", "Condo", "Townhouse"],
               datasets: [{
-                data: [30, 70],
-                backgroundColor: ['#ff6384', '#3498db'],
-              }]
+                data: [30, 25, 20, 25],
+                backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"]
+            }]
             },
             options: {
               cutout: '80%', // Adjust the cutout percentage as needed
@@ -115,32 +115,37 @@
               maintainAspectRatio: true, // Maintain aspect ratio
             }
           });
+          
           var ctx1 = document.getElementById('myChart1').getContext('2d');
 
+          var jsonData = '{"months":["Jan","Feb","Mar","Apr","May","Jun"],"averagePrices":[300000,310000,320000,330000,340000,350000]}';
+          var parsedData = JSON.parse(jsonData);
+          var lineChartData = {
+            labels: parsedData.months,
+            datasets: [{
+              label: "Average Property Price",
+              data: parsedData.averagePrices,
+              fill: false,
+              borderColor: "rgba(75, 192, 192, 1)",
+              borderWidth: 2,
+              pointBackgroundColor: "rgba(75, 192, 192, 1)",
+              pointRadius: 5,
+              pointHoverRadius: 8
+        }]
+    };
           var myChart1 = new Chart(ctx1, {
             type: 'line',
             data: {
-              labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+              labels: parsedData.months,
               datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)',
-                  'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                  'rgba(255, 99, 132, 1)',
-                  'rgba(54, 162, 235, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
+                label: "Average Property Price",
+                data: parsedData.averagePrices,
+                fill: false,
+                borderColor: "rgba(75, 192, 192, 1)",
+                borderWidth: 2,
+                pointBackgroundColor: "rgba(75, 192, 192, 1)",
+                pointRadius: 5,
+                pointHoverRadius: 8
               }]
             },
             options: {
@@ -157,28 +162,14 @@
           var myChart2 = new Chart(ctx2, {
             type: 'bar',
             data: {
-              labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+              labels: ["$100k-$200k", "$200k-$300k", "$300k-$400k", "$400k-$500k", "$500k+"],
               datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)',
-                  'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                  'rgba(255, 99, 132, 1)',
-                  'rgba(54, 162, 235, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-              }]
+              label: "Price Range",
+              data: [15, 30, 25, 15, 15],
+              backgroundColor: "rgba(75, 192, 192, 0.2)",
+              borderColor: "rgba(75, 192, 192, 1)",
+              borderWidth: 1
+            }]
             },
             options: {
               layout: {
