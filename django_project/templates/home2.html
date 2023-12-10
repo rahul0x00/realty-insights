@@ -116,10 +116,10 @@
           
           var ctx1 = document.getElementById('myChart1').getContext('2d');
 
-          var jsonData = '{"inr":["1BHK","2BHK","3BHK","4BHK","5BHK","5BHK+"],"averagePrices":[300000,310000,320000,330000,340000,350000]}';
+          var jsonData = '{"inr":["1BHK","2BHK","3BHK","4BHK","5BHK","5BHK+"],"averagePrices":[1500000,2060000,7500000,10000000,34000000,35000000]}';
           var parsedData = JSON.parse(jsonData);
           var lineChartData = {
-            labels: parsedData.months,
+            labels: parsedData.inr,
             datasets: [{
               label: "Average Property Price",
               data: parsedData.averagePrices,
@@ -134,9 +134,9 @@
           var myChart1 = new Chart(ctx1, {
             type: 'line',
             data: {
-              labels: parsedData.months,
+              labels: parsedData.inr,
               datasets: [{
-                label: "Average Property Price",
+                label: "Average Property Price wrt BHK",
                 data: parsedData.averagePrices,
                 fill: false,
                 borderColor: "rgba(75, 192, 192, 1)",
@@ -162,7 +162,7 @@
             data: {
               labels: ["$100k-$200k", "$200k-$300k", "$300k-$400k", "$400k-$500k", "$500k+"],
               datasets: [{
-              label: "Price Range",
+              label: "Price Range wrt condition",
               data: [15, 30, 25, 15, 15],
               backgroundColor: "rgba(75, 192, 192, 0.2)",
               borderColor: "rgba(75, 192, 192, 1)",
