@@ -17,6 +17,12 @@ import json
 def dashboard(request):
     with open('data.json', 'r') as file:
         data = json.load(file)
+    bhk= [1,2,3,4,5,'5+']
+    bathroom = [1,2,3,4,'5+']
+    bhk_json= json.dumps(bhk)
+    bathroom_json = json.dumps(bathroom)
+    return render(request, 'analysis.html', {'bhk': bhk_json},{'bathroom',bathroom_json})
+
 
     return render(request, 'home2.html', {'data': data})
 
