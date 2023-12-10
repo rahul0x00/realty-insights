@@ -101,9 +101,15 @@
           var doughnutChart = new Chart(doughnutCtx, {
             type: 'doughnut',
             data: {
+<<<<<<< HEAD
               labels: ["1BHK", "2BHK", "3BHK", "4BHK"],
               datasets: [{
                 data: [5252,3727,1894, 697],
+=======
+              labels: ["Apartment", "House", "Condo", "Townhouse"],
+              datasets: [{
+                data: [30, 25, 20, 25],
+>>>>>>> fc141c77006ae3ebdc7461de19d2c5679e612238
                 backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"]
             }]
             },
@@ -116,7 +122,11 @@
           
           var ctx1 = document.getElementById('myChart1').getContext('2d');
 
+<<<<<<< HEAD
           var jsonData = '{"inr":["1BHK","2BHK","3BHK","4BHK","5BHK","5BHK+"],"averagePrices":[300000,310000,320000,330000,340000,350000]}';
+=======
+          var jsonData = '{"months":["Jan","Feb","Mar","Apr","May","Jun"],"averagePrices":[300000,310000,320000,330000,340000,350000]}';
+>>>>>>> fc141c77006ae3ebdc7461de19d2c5679e612238
           var parsedData = JSON.parse(jsonData);
           var lineChartData = {
             labels: parsedData.months,
