@@ -32,7 +32,7 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
-<body style="height: auto; width:auto;">
+<body style=" width:auto;">
   <h1 class="text-center">
     Dashboard
   </h1>
@@ -59,17 +59,18 @@
   <div class="container-fluid">
     <div class="row">
       <!-- Sidebar -->
+      <div class="col-md-2 p-0">
       {% include 'sidebar.html' %}
-      
+    </div>
       <!-- Content -->
       <div class="col-md-9 content">
         <h2 class="text-center"><u></u></h2>
         <hr>
       
-        <div class="col-md-3">
+        <div class="container-fluid">
+        <div class="col-md-4  ">
           <canvas id="doughnutChart" class="doughnut-chart"></canvas>
         </div>
-        <div class="container-fluid">
           <div class="row">
             <!-- First Chart Container -->
             <div class="col-md-6 chart-container">
@@ -81,7 +82,7 @@
             <!-- Second Chart Container -->
             <div class="col-md-6 chart-container">
               <div class="chart">
-                <canvas id="myChart2"></canvas>
+                <canvas id="myChart2" height="150px"></canvas>
               </div>
             </div>
           </div>
@@ -101,15 +102,9 @@
           var doughnutChart = new Chart(doughnutCtx, {
             type: 'doughnut',
             data: {
-<<<<<<< HEAD
-              labels: ["1BHK", "2BHK", "3BHK", "4BHK"],
+              labels: ["1BHK", "2BHK", "3BHK", "4BHK","5BHK","5BHK+"],
               datasets: [{
                 data: [5252,3727,1894, 697],
-=======
-              labels: ["Apartment", "House", "Condo", "Townhouse"],
-              datasets: [{
-                data: [30, 25, 20, 25],
->>>>>>> fc141c77006ae3ebdc7461de19d2c5679e612238
                 backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"]
             }]
             },
@@ -122,14 +117,10 @@
           
           var ctx1 = document.getElementById('myChart1').getContext('2d');
 
-<<<<<<< HEAD
           var jsonData = '{"inr":["1BHK","2BHK","3BHK","4BHK","5BHK","5BHK+"],"averagePrices":[300000,310000,320000,330000,340000,350000]}';
-=======
-          var jsonData = '{"months":["Jan","Feb","Mar","Apr","May","Jun"],"averagePrices":[300000,310000,320000,330000,340000,350000]}';
->>>>>>> fc141c77006ae3ebdc7461de19d2c5679e612238
           var parsedData = JSON.parse(jsonData);
           var lineChartData = {
-            labels: parsedData.months,
+            labels: parsedData.averagePrices,
             datasets: [{
               label: "Average Property Price",
               data: parsedData.averagePrices,
@@ -144,7 +135,7 @@
           var myChart1 = new Chart(ctx1, {
             type: 'line',
             data: {
-              labels: parsedData.months,
+              labels: parsedData.inr,
               datasets: [{
                 label: "Average Property Price",
                 data: parsedData.averagePrices,
