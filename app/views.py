@@ -36,7 +36,7 @@ def property_distribution(request):
     with open('data.json') as f:
         property_listings = json.load(f)
     # property_prices = [property['price'] for property in property_listings]
-    property_prices = [200000, 300000, 250000, 400000, 350000, 500000, 600000, 700000, 800000]
+    property_prices = [2000000, 3000000, 2500000, 4000000, 3500000, 5000000, 6000000, 7000000, 8000000]
     property_prices_json = json.dumps(property_prices)
     return render(request, 'analysis.html', {'property_prices': property_prices_json})
 
