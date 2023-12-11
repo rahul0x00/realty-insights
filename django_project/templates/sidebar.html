@@ -36,7 +36,7 @@
     <!-- <div class="container-fluid">
     <div class="row"> -->
       <!-- Sidebar -->
-      <div class="col-md-3 sidebar" style="height: auto; padding-bottom: 200px;">
+      <div class="col-md-3 sidebar" style="height:100%;">
         <h2></i>My Profile</h2>
         <img src="{% static 'profile.png' %}" alt="Profile Image" class="profile-image">
         <ul class="list-unstyled">
@@ -45,9 +45,12 @@
         <br>
         <li><a class="nav-link" href="{% url 'list' %}"><i class="fas fa-envelope"></i> Property Listings</a></li>
         <br>
-        <li><a class="nav-link" href="{% url 'property_distribution' %}"><i class="fas fa-cog"></i>Market Analysis</a></li>
+        <li style="margin-left: -2px;"><a class="nav-link" href="{% url 'property_distribution' %}"><svg height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75zM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 01-1.875-1.875V8.625zM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 013 19.875v-6.75z" />
+          </svg>          
+          Market Analysis</a></li>
         <br>
-        <li><a class="nav-link" href=""><i class="fas fa-cog"></i> Report & Insights</a></li>
+        <li><a class="nav-link" href=""><i class="fas fa-download"></i> Report & Insights</a></li>
         </ul>
     </div>
 </body>

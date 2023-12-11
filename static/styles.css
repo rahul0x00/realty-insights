@@ -8,16 +8,16 @@ h1 {
 
 .sidebar {
     width: 200px; /* Adjust the width as needed */
-    height: auto; /* Full-height sidebar */
+     /* Full-height sidebar */
     background: linear-gradient(to right, #2f5f7f, #1a2633); /* Gradient background */
     color: #fff; /* Text color */
     padding: 15px; /* Padding inside the sidebar */
     box-shadow: 2px 0 5px rgba(144, 122, 122, 0.1); /* Add a subtle shadow */
 }
 .sidebar {
-    height: auto; /* Full-height sidebar */
     background: linear-gradient(to right, rgb(26, 47, 61), #465f77); /* Gradient background */
     color: #fff; /* Text color */
+    margin-left: 0%;
     padding: px; /* Padding inside the sidebar */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
@@ -26,7 +26,7 @@ h1 {
     top: 10px;*/
     margin-left: 90px;
     margin-top: 40px;
-    width: 10px;
+    width: 100px;
   } 
 
 .profile-image {
